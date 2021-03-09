@@ -29,5 +29,15 @@ int main() {
 
 	print(head);
 
+	int n;
+	do {
+		printf("Enter (n > 0): ");
+		scanf("%d", &n);
+	} while (n < 1);
+
+	printf("\nThe number you entered was: %d\n", n);
+
+	return 0;
+
 
 }
