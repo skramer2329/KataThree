@@ -1,0 +1,16 @@
+NOTE: named files in UNIX are main.c mid2.c mid2.h
+
+
+main: main.o mid2.o
+        gcc -Wall main.o mid2.o -o main
+
+main.o: main.c mid2.h
+        gcc -Wall -c main.c
+
+mid2.o: mid2.c mid2.h
+        gcc -Wall -c mid2.c
+
+clean:
+        rm main
+        rm main.o
+        rm mid2.o

@@ -7,8 +7,11 @@ void createList(myPizza** head) {
 }
 
 void addToEnd(myPizza** head, myPizza* endNode) {
-	if (*head == NULL)
-		printf("Head is NULL");
+	if (*head == NULL) {
+		*head = endNode;
+		endNode->next = NULL;
+	}
+		
 	else {
 		struct myPizza* i = NULL;
 		for (i = *head; i != NULL; i = i->next) {

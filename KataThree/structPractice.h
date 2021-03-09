@@ -4,7 +4,7 @@ typedef struct myPizza {
 	int numOfSlices;
 	char* toppingOne;
 	char* toppingTwo;
-	myPizza* next;
+	struct myPizza* next;
 }myPizza;
 
 
