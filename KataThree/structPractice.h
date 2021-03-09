@@ -4,15 +4,14 @@ typedef struct myPizza {
 	int numOfSlices;
 	char* toppingOne;
 	char* toppingTwo;
-	node* myOrders;
+	myPizza* next;
 }myPizza;
 
-typedef struct node {
-	node* next;
-	int numOfOrders;
-}node;
 
 
-void createList(node** head);
 
-void addToEnd(node** head, node* endNode);
+void createList(myPizza** head);
+
+void addToEnd(myPizza** head, myPizza* endNode);
+
+void print(myPizza* head);
