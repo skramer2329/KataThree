@@ -1,43 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "structPractice.h"
+#include <string.h>
 
 int main() {
 
-	//creates a head node and dynamically allocates space for it
-	myPizza* head;
-	head = (myPizza*)malloc(sizeof(myPizza));
+    //creates a head node and dynamically allocates space for it
+    char buffer[1024];
+    int numPizzas;
+    myPizza* head;
+    head = (myPizza*)malloc(sizeof(myPizza));
 
 
-	createList(&head);
-	//char* name;
-	//int numOfSlices;
-	//char* toppingOne;
-	//char* toppingTwo;
-	//node* myOrders;
+    createList(&head);
+    //char* name;
+    //int numOfSlices;
+    //char* toppingOne;
+    //char* toppingTwo;
+    //node* myOrders;
+    myPizza* pizza;
+    for (int i = 1; i < 3; i++) {
 
-	myPizza* pizza;
-	for (int i = 1; i < 2; i++) {
-		pizza = (myPizza*)malloc(sizeof(myPizza));
-		pizza->name = "Sabrinas Pizza";
-		pizza->numOfSlices = 10;
-		pizza->toppingOne = "pepperoni";
-		pizza->toppingTwo = "sausage";
-		pizza->next = NULL;
-		addToEnd(&head, pizza);
-	}
+        printf("\n");
+        pizza = (myPizza*)malloc(sizeof(myPizza));
 
-	print(head);
+        printf("Enter name of customer: ");
+        scanf("%s", buffer);
+        pizza->name = strdup(buffer);
 
-	int n;
-	do {
-		printf("Enter (n > 0): ");
-		scanf("%d", &n);
-	} while (n < 1);
+        printf("Enter number of pizzas: ");
+        scanf("%d", &numPizzas);
+        pizza->numOfSlices = numPizzas;
 
-	printf("\nThe number you entered was: %d\n", n);
+        printf("Enter topping one: ");
+        scanf("%s", buffer);
+        pizza->toppingOne = strdup(buffer);
 
-	return 0;
+        printf("Enter topping two: ");
+        scanf("%s", buffer);
+        pizza->toppingTwo = strdup(buffer);
+        addToEnd(&head, pizza);
+    }
+
+    print(head);
 
 
-}
+    return 0;
