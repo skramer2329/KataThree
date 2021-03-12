@@ -30,7 +30,7 @@ void addToEnd(myPizza** head, myPizza* endNode) {
 void print(myPizza* head) {
 	while (head) {
 		printf("Name of Person: %s\n", head->name);
-		printf("Num of slices: %d\n", head->numOfSlices);
+		printf("Num of slices: %d\n", head->numOfOrders);
 		printf("Topping One: %s\n", head->toppingOne);
 		printf("Topping Two: %s\n", head->toppingTwo);
 		

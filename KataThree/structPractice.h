@@ -1,7 +1,7 @@
 #pragma once
 typedef struct myPizza {
 	char* name;
-	int numOfSlices;
+	int numOfOrders;
 	char* toppingOne;
 	char* toppingTwo;
 	struct myPizza* next;

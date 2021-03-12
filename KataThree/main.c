@@ -5,7 +5,6 @@
 
 int main() {
 
-    //creates a head node and dynamically allocates space for it
     char buffer[1024];
     int numPizzas;
     myPizza* head;
@@ -13,11 +12,7 @@ int main() {
 
 
     createList(&head);
-    //char* name;
-    //int numOfSlices;
-    //char* toppingOne;
-    //char* toppingTwo;
-    //node* myOrders;
+
     myPizza* pizza;
     for (int i = 1; i < 3; i++) {
 
@@ -30,7 +25,7 @@ int main() {
 
         printf("Enter number of pizzas: ");
         scanf("%d", &numPizzas);
-        pizza->numOfSlices = numPizzas;
+        pizza->numOfOrders = numPizzas;
 
         printf("Enter topping one: ");
         scanf("%s", buffer);
@@ -44,5 +39,11 @@ int main() {
 
     print(head);
 
+    free(head->name);
+    free(head->toppingOne);
+    free(head->toppingTwo);
+    free(head);
+
 
     return 0;
+}
